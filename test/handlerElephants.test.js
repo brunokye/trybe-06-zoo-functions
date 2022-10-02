@@ -37,7 +37,7 @@ describe('Testes da função HandlerElephants', () => {
     expect(actual).toBeCloseTo(expected);
   });
 
-  it('retorna null caso o param seja uma string inválida', () => {
+  it('retorna null caso o parâmetro seja uma string inválida', () => {
     const actual = handlerElephants('test');
     const expected = null;
     expect(actual).toEqual(expected);

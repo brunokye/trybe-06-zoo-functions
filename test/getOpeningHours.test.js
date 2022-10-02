@@ -16,20 +16,38 @@ describe('Testes da função getOpeningHours', () => {
   });
 
   it('retorna \'The zoo is closed\' para Monday 09:00-AM', () => {
-    const actual = (getOpeningHours('Monday', '09:00-AM'));
+    const actual = getOpeningHours('Monday', '09:00-AM');
     const expected = 'The zoo is closed';
     expect(actual).toBe(expected);
   });
 
   it('retorna \'The zoo is open\' para Tuesday 09:00-AM', () => {
-    const actual = (getOpeningHours('Tuesday', '09:00-AM'));
+    const actual = getOpeningHours('Tuesday', '09:00-AM');
     const expected = 'The zoo is open';
     expect(actual).toBe(expected);
   });
 
   it('retorna \'The zoo is closed\' para Wednesday 09:00-PM', () => {
-    const actual = (getOpeningHours('Wednesday', '09:00-PM'));
+    const actual = getOpeningHours('Wednesday', '09:00-PM');
     const expected = 'The zoo is closed';
     expect(actual).toBe(expected);
+  });
+
+  it('retorna \'The day must be valid. Example: Monday\' para Thu 09:00-AM', () => {
+    const actual = () => getOpeningHours('Thu', '09:00-AM');
+    const expected = 'The day must be valid. Example: Monday';
+    expect(actual).toThrow(expected);
+  });
+
+  it('retorna \'The abbreviation must be \'AM\' or \'PM\'\' para Friday 09:00-ZM', () => {
+    const actual = () => getOpeningHours('Friday', '09:00-ZM');
+    const expected = 'The abbreviation must be \'AM\' or \'PM\'';
+    expect(actual).toThrow(expected);
+  });
+
+  it('retorna \'The hour should represent a number\' para Saturday C9:00-AM', () => {
+    const actual = () => getOpeningHours('Saturday', 'C9:00-AM');
+    const expected = 'The hour should represent a number';
+    expect(actual).toThrow(expected);
   });
 });

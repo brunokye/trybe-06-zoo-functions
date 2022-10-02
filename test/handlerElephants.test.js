@@ -13,21 +13,33 @@ describe('Testes da função HandlerElephants', () => {
     expect(actual).toBe(expected);
   });
 
-  it('argumento count retorna 4', () => {
+  it('retorna chave do parâmetro em relação ao objeto elephants', () => {
+    const actual = handlerElephants('id');
+    const expected = 'bb2a76d8-5fe3-4d03-84b7-dba9cfc048b5';
+    expect(actual).toBe(expected);
+  });
+
+  it('retorna 4, parâmetro count', () => {
     const actual = handlerElephants('count');
     const expected = 4;
     expect(actual).toBe(expected);
   });
 
-  it('argumento names deve retornar um array de nomes que possui o nome Jefferson', () => {
+  it('retorna um array de nomes que inclui o nome Jefferson, parâmetro names', () => {
     const actual = handlerElephants('names');
     const expected = 'Jefferson';
     expect(actual).toContain(expected);
   });
 
-  it('argumento averageAge deve retornar um número próximo a 10.5', () => {
+  it('retorna um número próximo a 10.5, parâmetro averageAge', () => {
     const actual = handlerElephants('averageAge');
     const expected = 10.5;
     expect(actual).toBeCloseTo(expected);
+  });
+
+  it('retorna null caso o param seja uma string inválida', () => {
+    const actual = handlerElephants('test');
+    const expected = null;
+    expect(actual).toEqual(expected);
   });
 });

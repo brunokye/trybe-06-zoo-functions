@@ -1,4 +1,3 @@
-
 # Zoo Functions
 
 Sabendo das suas habilidades com ES6, Higher Order Functions e testes, a prefeitura da cidade te deu uma importante missão: organizar as informações do zoológico!

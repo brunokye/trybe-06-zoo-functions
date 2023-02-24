@@ -12,7 +12,7 @@ A sequência dos requisitos desse projeto foi disposta de forma a te proporciona
 
 ## Projeto
 
-![App Screenshot](https://i.imgur.com/SwlIqh6.png)
+![Print do Projeto](https://i.imgur.com/SwlIqh6.png)
 
 ## Executar Localmente
 
